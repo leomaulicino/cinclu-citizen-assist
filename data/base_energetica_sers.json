@@ -1,0 +1,95 @@
+{
+  "metadados_projeto": {
+    "projeto": "cinclu — Citizen Assist AI",
+    "disciplina": "Soluções em Energias Renováveis e Sustentáveis (SERS)",
+    "instituicao": "FIAP — Ciência da Computação (Turma 1CCPQ) — Global Solution 2026.2",
+    "integrantes": [
+      {"nome": "Enzo Posterlli Strinta", "rm": "570035"},
+      {"nome": "Giovanna Tristão Lopes", "rm": "572552"},
+      {"nome": "Leonardo Robert Maulicino", "rm": "570329"}
+    ],
+    "transparencia_recorte_lgbt": "Órgãos oficiais do setor elétrico (ANEEL, EPE, IBGE) não publicam dados de consumo elétrico (kWh) segmentados por orientação sexual ou identidade de gênero. Conforme o Projeto de Lei nº 1.182/2023 (Câmara dos Deputados), cidadãos e casas de acolhimento LGBT+ em vulnerabilidade ainda não possuem enquadramento automático na Tarifa Social, sendo faturados na tarifa residencial convencional (Subgrupo B1)."
+  },
+  "parametros_oficiais": {
+    "consumo_medio_residencial_kwh_mes": {
+      "valor": 179.1,
+      "unidade": "kWh/mês",
+      "classificacao": "dado_publico_oficial",
+      "fonte": "EPE — Anuário Estatístico de Energia Elétrica 2026 (2.149,2 kWh/ano)",
+      "url": "https://www.epe.gov.br/sites-pt/publicacoes-dados-abertos/publicacoes/PublicacoesArquivos/publicacao-160/topico-168/Anuario_Sumario%20Executivo_2026_V1.pdf",
+      "limitacao": "Média nacional por unidade consumidora; varia conforme região e número de moradores."
+    },
+    "tarifa_base_b1_brl_kwh": {
+      "valor": 0.78938,
+      "unidade": "R$/kWh",
+      "classificacao": "dado_publico_oficial",
+      "fonte": "ANEEL / Enel Distribuição São Paulo — Resolução Homologatória nº 3.596/2026 (TUSD R$ 0,47242 + TE R$ 0,31696)",
+      "url": "https://www.enel.com.br/pt-saopaulo/Para_Voce/tarifa-energia-eletrica.html",
+      "limitacao": "Tarifa homologada sem impostos (ICMS, PIS/COFINS e COSIP variam por faixa de consumo)."
+    },
+    "custo_disponibilidade_monofasico_kwh": {
+      "valor": 30.0,
+      "unidade": "kWh/mês",
+      "classificacao": "dado_publico_oficial",
+      "fonte": "ANEEL — Resolução Normativa nº 1.000/2021 (R$ 23,68/mês na tarifa base B1)",
+      "url": "https://www2.aneel.gov.br/cedoc/ren20211000.html",
+      "limitacao": "Valor mínimo faturável mensal para ligação monofásica (50 kWh bifásico; 100 kWh trifásico)."
+    },
+    "tusd_fio_b_referencia_brl_kwh": {
+      "valor": 0.17795,
+      "unidade": "R$/kWh",
+      "classificacao": "premissa_estimada",
+      "fonte": "Parcela estimada da TUSD Fio B dentro da TUSD Enel SP (R$ 0,47242/kWh) aplicada ao escalonamento de 60% em 2026 (Lei nº 14.300/2022, Art. 27)",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/l14300.htm",
+      "limitacao": "Parcela exata do Fio B depende da estrutura tarifária detalhada e da simultaneidade entre geração e consumo."
+    },
+    "percentual_fio_b_2026": {
+      "valor": 0.60,
+      "unidade": "fração (60%)",
+      "classificacao": "dado_publico_oficial",
+      "fonte": "Lei nº 14.300/2022, Art. 27 — Regra de transição para sistemas protocolados após 07/01/2023",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/l14300.htm",
+      "limitacao": "Percentual escalonado anualmente até 2028/2029."
+    },
+    "irradiacao_solar_sp_hsp": {
+      "valor": 4.44,
+      "unidade": "kWh/m².dia (HSP)",
+      "classificacao": "dado_publico_oficial",
+      "fonte": "CRESESB / CEPEL — Sistema SunData v3.0 (São Paulo/SP, plano horizontal)",
+      "url": "https://cresesb.cepel.br/index.php?section=sundata",
+      "limitacao": "Média anual histórica; varia conforme sazonalidade, inclinação, azimute e sombreamento."
+    },
+    "taxa_desempenho_solar": {
+      "valor": 0.75,
+      "unidade": "fração (75%)",
+      "classificacao": "premissa_estimada",
+      "fonte": "Premissa técnica conservadora de engenharia fotovoltaica (perdas por temperatura, inversor, cabeamento e sujeira)",
+      "url": "https://cresesb.cepel.br/index.php?section=sundata",
+      "limitacao": "Pode variar entre 70% e 82% conforme qualidade dos equipamentos e manutenção."
+    },
+    "custo_kwp_turnkey_brl": {
+      "valor": 3620.0,
+      "unidade": "R$/kWp",
+      "classificacao": "dado_publico_mercado",
+      "fonte": "Greener — Estudo Estratégico de Geração Distribuída (preço médio R$ 3,62/Wp para sistemas até 2 kWp)",
+      "url": "https://estudo-gd-2025.greener.com.br/",
+      "limitacao": "Preço médio de referência; varia conforme complexidade estrutural do telhado e região."
+    },
+    "fator_emissao_sin_kg_kwh": {
+      "valor": 0.04,
+      "unidade": "kg CO₂/kWh",
+      "classificacao": "dado_publico_oficial",
+      "fonte": "MCTI / EPE — Fatores de Emissão do Sistema Interligado Nacional (0,04 tCO₂/MWh)",
+      "url": "https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/sirene/dados-e-ferramentas/fatores-de-emissao",
+      "limitacao": "Média anual do SIN; varia conforme despacho termelétrico em períodos secos."
+    },
+    "premissas_operacionais_eficiencia": {
+      "valor": "R$ 10,00 por lâmpada LED (9W) e OPEX solar de R$ 150,00/ano",
+      "unidade": "R$",
+      "classificacao": "premissa_estimada",
+      "fonte": "Pesquisa de mercado varejista e estimativa padrão de manutenção de inversores/limpeza",
+      "url": "https://www.gov.br/inmetro/pt-br/assuntos/avaliacao-da-conformidade/programa-brasileiro-de-etiquetagem/tabelas-de-eficiencia-energetica",
+      "limitacao": "Valores estimados para fins de modelagem econômica simplificada."
+    }
+  }
+}

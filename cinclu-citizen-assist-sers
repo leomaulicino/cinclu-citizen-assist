@@ -1,0 +1,11 @@
+cinclu-citizen-assist-sers/
+├── data/
+│   └── base_energetica_sers.json
+├── src/
+│   ├── __init__.py          <-- Arquivo totalmente em branco (0 bytes)
+│   ├── sers_engine.py
+│   └── assistant_sers.py
+├── tests/
+│   └── test_sers.py
+├── app.py
+└── requirements.txt
